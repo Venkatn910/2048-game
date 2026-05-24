@@ -1,0 +1,29 @@
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+  name: "2048-game"
+  namespace: "game"
+  labels:
+    app: "frontend"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "frontend"
+  template:
+    metadata:
+      labels:
+        app: "frontend"
+    spec:
+      containers:
+        - name: "2048-game"
+          image: "501804114434.dkr.ecr.us-east-2.amazonaws.com/venkat-sample-docker:IMAGE_ID"
+          ports:
+            - containerPort: 5050
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
