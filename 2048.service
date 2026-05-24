@@ -1,0 +1,15 @@
+[Unit]
+Description=2048 Web Game
+After=network.target
+
+[Service]
+Type=simple
+User=ec2-user
+WorkingDirectory=/home/ec2-user/2048_web
+ExecStart=/home/ec2-user/2048_web/venv/bin/python app.py
+Restart=always
+RestartSec=5
+Environment=PORT=5050
+
+[Install]
+WantedBy=multi-user.target
