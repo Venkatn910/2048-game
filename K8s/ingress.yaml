@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: 2048-game
+  name: game-2048
   namespace: game
 
   annotations:
@@ -21,6 +21,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: 2048-game
+            name: game-2048
             port:
               number: 80
