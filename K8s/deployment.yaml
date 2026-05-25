@@ -1,7 +1,7 @@
 apiVersion: "apps/v1"
 kind: "Deployment"
 metadata:
-  name: "2048-game"
+  name: "game-2048"
   namespace: "game"
   labels:
     app: "frontend"
@@ -16,7 +16,7 @@ spec:
         app: "frontend"
     spec:
       containers:
-        - name: "2048-game"
+        - name: "game-2048"
           image: "501804114434.dkr.ecr.us-east-2.amazonaws.com/venkat-sample-docker:IMAGE_ID"
           ports:
             - containerPort: 5050
