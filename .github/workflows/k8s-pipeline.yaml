@@ -52,7 +52,7 @@ jobs:
 
       - name: configure EKS cluster with kubectl
         run: |
-          aws eks update-kubeconfig --region us-west-2 --name Venkat-eksproject
+          aws eks update-kubeconfig --region us-east-2 --name Venkat-EKSCluster
       
       - name: replacing the image-id with github.sha
         run: |
