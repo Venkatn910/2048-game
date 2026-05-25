@@ -11,6 +11,9 @@ metadata:
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80},{"HTTPS": 443}]'
     alb.ingress.kubernetes.io/ssl-redirect: '443'
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-2:501804114434:certificate/14d4929b-c082-456a-acab-3620b83f55a9
+    alb.ingress.kubernetes.io/target-group-attributes: stickiness.enabled=true,stickiness.lb_cookie.duration_seconds=86400
+    alb.ingress.kubernetes.io/load-balancer-attributes: routing.http2.enabled=true
+spec:
 spec:
   ingressClassName: alb
   rules:
